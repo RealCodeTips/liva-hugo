@@ -1,0 +1,15 @@
+.card-img-top {
+    width: 100%;
+    height: 15vw;
+    object-fit: cover;
+
+    @include mobile {
+      height: 30vh;
+    }
+}
+
+p {
+  img {
+    width: 100%
+  }
+}

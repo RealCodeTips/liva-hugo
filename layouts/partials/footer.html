@@ -1,37 +1,60 @@
 {{ if .Site.Params.newsletter.enable }}
-<section class="section-sm">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-8 mx-auto text-center">
-        <h2>{{ .Site.Params.newsletter.title | markdownify }}</h2>
-        <p class="text-light px-md-5 py-4 border-left border-right border-primary">
-          {{ .Site.Params.newsletter.content | markdownify }}</p>
-        <form action="#" class="row justify-content-center">
-          <div class="input-group col-md-8">
-            <input type="text" class="form-control" placeholder="Your Email Address">
-            <div class="input-group-append">
-              <button class="input-group-text btn btn-primary">Subscribe</button>
-            </div>
-          </div>
-        </form>
+  <!-- Begin Mailchimp Signup Form -->
+  <link href="//cdn-images.mailchimp.com/embedcode/horizontal-slim-10_7.css" rel="stylesheet" type="text/css">
+  <style type="text/css">
+    #mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif; width:100%;}
+    /* Add your own Mailchimp form style overrides in your site stylesheet or in this style block.
+       We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
+  </style>
+  <div id="mc_embed_signup" class="mt-5 mb-5">
+    <form action="https://codetips.us20.list-manage.com/subscribe/post?u=340377874e22141e68e19d041&amp;id=d0c7655357" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+      <div id="mc_embed_signup_scroll">
+        <label for="mce-EMAIL">Subscribe to our newsletter</label>
+        <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
+        <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+        <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_340377874e22141e68e19d041_d0c7655357" tabindex="-1" value=""></div>
+        <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
       </div>
-    </div>
+    </form>
   </div>
-</section>
+  <!--End mc_embed_signup-->
+{{/*<section class="section-sm">*/}}
+{{/*  <div class="container">*/}}
+{{/*    <div class="row">*/}}
+{{/*      <div class="col-lg-8 mx-auto text-center">*/}}
+{{/*        <h2>{{ .Site.Params.newsletter.title | markdownify }}</h2>*/}}
+{{/*        <p class="text-light px-md-5 py-4 border-left border-right border-primary">*/}}
+{{/*          {{ .Site.Params.newsletter.content | markdownify }}</p>*/}}
+{{/*        <form action="#" class="row justify-content-center">*/}}
+{{/*          <div class="input-group col-md-8">*/}}
+{{/*            <input type="text" class="form-control" placeholder="Your Email Address">*/}}
+{{/*            <div class="input-group-append">*/}}
+{{/*              <button class="input-group-text btn btn-primary">Subscribe</button>*/}}
+{{/*            </div>*/}}
+{{/*          </div>*/}}
+{{/*        </form>*/}}
+{{/*      </div>*/}}
+{{/*    </div>*/}}
+{{/*  </div>*/}}
+{{/*</section>*/}}
 {{ end }}
 
 <footer>
   <div class="container">
     <div class="row">
-      <div class="col-12 text-center mb-5">
-        <a href="{{ .Site.BaseURL }}"><img src="{{ .Site.Params.logo | absURL }}" alt="{{ .Site.Title }}"></a>
-      </div>
+{{/*      <div class="col-12 text-center mb-5">*/}}
+{{/*        <a href="{{ .Site.BaseURL }}"><img src="{{ .Site.Params.logo | absURL }}" alt="{{ .Site.Title }}"></a>*/}}
+{{/*      </div>*/}}
       <div class="col-lg-3 col-sm-6 mb-5">
         <h6 class="mb-4">Contact Me</h6>
         <ul class="list-unstyled">
+          {{ if .Site.Params.mobile }}
           <li class="mb-3"><a class="text-dark" href="tel:{{ .Site.Params.mobile }}"><i
                 class="ti-mobile mr-3 text-primary"></i>{{ .Site.Params.mobile }}</a></li>
+          {{ end }}
+          {{ if .Site.Params.location }}
           <li class="mb-3"><i class="ti-location-pin mr-3 text-primary"></i>{{ .Site.Params.location }}</li>
+          {{ end }}
           <li class="mb-3"><a class="text-dark" href="mailto:{{ .Site.Params.email }}"><i
                 class="ti-email mr-3 text-primary"></i>{{ .Site.Params.email }}</a>
           </li>
